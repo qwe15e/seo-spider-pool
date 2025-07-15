@@ -13,8 +13,8 @@ jobs:
         run: |
           # 目标页面 URL
           URL="https://sites.google.com/view/plastic-hollow-balls/plastic-hollow-ball"
-          # 循环访问 40 次，带参数避免 CDN 缓存
-          for i in {1..40}; do
+          # 循环访问 100 次，带参数避免 CDN 缓存
+          for i in {1..100}; do
             curl -s -o /dev/null \
               -A "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)" \
               "$URL?cache_bust=$i"
