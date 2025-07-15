@@ -12,7 +12,7 @@ jobs:
       - name: Simulate Googlebot Visits Every Minute
         run: |
           # 目标页面 URL
-          URL="https://sites.google.com/view/plastic-hollow-balls/plastic-hollow-ball"
+          URL="https://sites.google.com/view/daishua/%E5%88%B7tiktok%E7%82%B9%E8%B5%9E%E7%B2%89%E4%B8%9D%E6%8A%96%E9%9F%B3%E5%B0%8F%E7%BA%A2%E4%B9%A6%E7%82%B9%E8%B5%9E%E7%B2%89%E4%B8%9D%E4%BE%BF%E5%AE%9C%E5%88%B7"
           # 循环访问 100 次，带参数避免 CDN 缓存
           for i in {1..100}; do
             curl -s -o /dev/null \
