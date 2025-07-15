@@ -1,0 +1,22 @@
+name: Mini Spider Pool
+
+# 触发时机：每小时整点
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Simulate Googlebot Visits
+        run: |
+          # 目标页面 URL
+          URL="https://sites.google.com/view/hollowplasticball/hollow-plastic-ball-factory-introduction"
+          # 循环访问 10 次，带上参数避免 CDN 缓存
+          for i in {1..50}; do
+            curl -s -o /dev/null \
+              -A "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)" \
+              "$URL?cache_bust=$i"
+            echo "Pinged $URL (round $i)"
+          done
